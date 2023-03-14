@@ -1,0 +1,149 @@
+.form {
+    margin-bottom: 100px;
+    padding: 50px 155px 38px;
+    background: $lg-2;
+    box-shadow: 0px 22px 18px $shadow;
+    border-radius: 34px;
+    border: 1px solid $border;
+    text-align: center;
+    @include desctop-small{
+        padding: 50px 120px 38px;
+    }
+    @include tablet{
+        padding: 35px;
+    }
+    @include tablet-small{
+        margin-bottom: 70px;
+    }
+    @include mobile{
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+
+    &__title {
+        margin-bottom: 13px;
+    }
+    &__subtitle {
+        margin-bottom: 29px;
+    }
+    &__input {
+        background: $lg-input;        
+        box-shadow: 10px 24px 54px $shadow;
+        border-radius: 70px;
+        outline: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-right: 10px;
+        @include tablet-small{
+            padding-right: 8px;
+         } 
+         @include mobile{
+            box-shadow: 0;
+            flex-direction: column;
+            border-radius: 0;
+            box-shadow: 10px 24px 54px $shadow;
+            background: transparent;
+            border: 0;
+        }                    
+    }
+    &__input-email {
+        @include text($f-rubik, 500, 2rem, 3rem, $white);            
+        background: transparent;
+        border-radius: 70px;
+        outline: 0; 
+        border: 0; 
+        padding: 25px 44px;
+        flex-grow: 1;   
+        @include tablet-small{
+           padding: 15px 20px;
+           font-size: 1.6rem;
+           line-height: 2rem; 
+        }  
+        @include mobile{
+            padding: 10px;
+            background: $lg-input;
+            width: 100%;            
+        }   
+        &::placeholder{
+            @include text($f-rubik, 400, 1.8rem, 3rem, $white);          
+            opacity: 0.9;            
+            @include tablet-small{
+                font-size: 1.6rem;
+                line-height: 2rem;                 
+            } 
+            @include mobile{
+                font-size: 1.4rem;
+            }    
+        }
+    }
+    &__input-btn {
+        @include text($f-rubik, 500, 2rem, 3rem, $white);
+        background: $lg-1;
+        opacity: 0.9;
+        border-radius: 70px;
+        padding: 15px 49px;
+        outline: 0;
+        border: 0;
+        position: relative;
+        cursor: pointer;
+        transition: .5s;
+        &:hover{
+            box-shadow: 0px 0px 3px 2px $white;
+        }        
+        @include tablet-small{
+            font-size: 0;
+            padding: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+         } 
+         @include mobile{
+            font-size: 1.6rem;
+            border-radius: 50px;
+            width: auto;
+            height: auto;
+            padding: 5px 30px;
+        }  
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            background-image: url(../../img/form/fly.svg);
+            width: 16px;
+            height: 16px;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            
+            @include tablet-small{
+                left: calc(50% - 8px);
+            } 
+            @include mobile{
+                left: 10px;
+            }    
+        } 
+        &:hover::after{
+            animation: fly 3s cubic-bezier(0.28, 0.17, 0.57, 1.01);
+        } 
+        @keyframes fly {
+            0% {
+                transform: translate(0,-8px);
+            }
+            45% {                
+                transform: translate(40vw,-50vh);
+            }
+            50% {                
+                transform: translate(40vw,100vh);
+            }
+            55% {                
+                transform: translate(-60vw,100vh);
+            }           
+            100% {                
+                transform: translate(0,-8px);
+            }
+        }      
+        
+    }
+}

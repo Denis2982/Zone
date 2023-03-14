@@ -1,0 +1,147 @@
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;     
+    padding-top: 40px;
+    gap: 55px;   
+    @include mobile{
+        padding-top: 20px;
+    }    
+}
+.nav {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+        gap: 50px;
+        transition: $transition;        
+        @include tablet{           
+            position: fixed;
+            padding: 0 30px;
+            letter-spacing: 5px;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            z-index: 5;
+            background-color: $body;
+            left: 0;
+            top: 0;
+            gap: 30px;
+            box-shadow: 3px 3px 8px 1px #D946EF;
+            transform: translateX(-150%);
+            &--open{
+                transform: translate(0);                
+            }
+        }
+        @include mobile{
+            padding: 0 20px;
+        }
+    }    
+    &__list-link {  
+        @include text($ff, 500, 1.4rem, 1.8rem, $ligth-gray);  
+        padding: 5px 5px;
+        background: linear-gradient(#971090 0 0) 100% 0, linear-gradient(#971090 0 0) 0 0,
+        linear-gradient(#971090 0 0) 0 100%, linear-gradient(#971090 0 0) 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px, 2px 0%;
+        transition: .5s;
+        &:hover {
+            background-size: 100% 2px, 2px 100%;
+            color: #FFFFFF;
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(191, 194, 197, 0.7);
+        }
+        &:active {
+            transform: translateY(-2px);
+            box-shadow: 0px 5px 10px rgba(191, 194, 197, 1);
+        }
+    }
+    
+    &__burger{
+        display: none;
+        align-items: center;        
+        position: relative;
+        z-index: 5;        
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+        @include tablet{            
+            display: flex;
+            position: relative;                        
+        }
+        @include mobile{
+            width: 30px;
+            height: 20px;
+        }
+        span{
+            height: 3px;
+            width: 100%;
+            border-radius: 4px;
+            transform: scale(1);
+            background-color: $white;
+            transition: $transition;
+            border: 0;
+        }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            background-color: $white;
+            transition: $transition;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &--open span {
+            transform: scale(0);
+        }
+        &--open::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%);
+        }
+        &--open::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+        }
+    }
+    & ul{
+        @include tablet {
+            padding: 80px;
+        }
+        @include mobile{
+            padding: 50px;
+        }
+    }
+}
+.btn--header {
+    position: relative;       
+    transform: perspective(500px) rotateY(-15deg);    
+    text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.02);    
+    transition: 0.5s;
+    overflow: hidden;
+}
+.btn--header:hover {
+    transform: perspective(500px) rotateY(15deg);
+    text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+}
+.btn--header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    transition: 0.5s;
+}
+.btn--header:hover::before {
+    left: 100%;
+}
+

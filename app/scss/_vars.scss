@@ -1,0 +1,42 @@
+//Fonts:
+$ff: 'DM Sans', sans-serif;
+$f-roboto: 'Roboto', sans-serif;
+$f-rubik: 'Rubik', sans-serif;
+
+
+//Color:
+$bg: #111827;
+$white:#ffffff;
+$black: #000;
+$ligth-gray: #F9FAFB;
+$gray: #E5E7EB;
+$dark-gray: #969696;
+$body: #111827;
+$blue_1: #28A8EA;
+$blue_2: #0077B5;
+$blue_3: #1877F2;
+$blue_4: #3FA4F1;
+$test: #2563EB;
+$text_rgba: rgba(255, 255, 255, 0.8);
+$border: rgba(255, 255, 255, 0.08);
+$shadow: rgba(0, 0, 0, 0.05);
+
+$lg-title: linear-gradient(89.83deg, #2563EB 0.11%, #D946EF 58.65%);
+$lg-1: linear-gradient(90.35deg, #2563EB 0.36%, #D946EF 201.02%);
+$lg-2: linear-gradient(180deg, rgba(254, 254, 255, 0.0145) 0%, rgba(255, 255, 255, 0.02) 100%);
+$lg-card: linear-gradient(268.12deg, rgba(254, 254, 255, 0.032) -11.04%, rgba(255, 255, 255, 0.018) 104.89%);
+$lg-input: linear-gradient(180deg, rgba(254, 254, 255, 0.0348) 0%, rgba(255, 255, 255, 0.048) 100%);
+
+
+//Transition:
+$transition: all .4s ease-in-out;
+
+
+//Breakpoints:
+$desctop-small: 1200px;
+$tablet: 992px;
+$tablet-small: 768px;
+$mobile: 576px;
+
+
+$container: 1210px

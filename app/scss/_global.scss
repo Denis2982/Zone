@@ -1,0 +1,90 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: $ff;
+    background-color: $body;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        bottom: 30px;
+        margin: 0 auto;
+        background: $dark-gray;
+        opacity: 0.2;        
+    }
+}
+
+.container{
+    max-width: $container;
+    padding: 0 20px;
+    margin: 0 auto;         
+}
+
+.logo {
+    @include text($f-rubik, 500, 2rem, 2.4rem, $white);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-grow: 1;
+    justify-items: flex-start;        
+}
+
+.title{
+    @include text($ff, 700, 4.2rem, 5.5rem, $white);
+    @include tablet{
+        font-size: 3.6rem;
+        line-height: 4.5rem;
+    }
+    @include tablet-small{
+        font-size: 2.8rem;
+        line-height: 3.5rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @include mobile{
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        margin-bottom: 20px;
+    }
+}
+
+.subtitle{
+    @include text($ff, 400, 1.6rem, 2.6rem, $white);
+    @include tablet-small{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include mobile{
+        margin-bottom: 20px;
+        line-height: 2rem;
+    }
+}
+
+.btn {
+    @include text($ff, 500, 1.4rem, 1.8rem, $ligth-gray);
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    padding: 1.2rem 2.8rem;
+    background: $lg-1;
+    border-radius: 5px;    
+    cursor: pointer;
+    &--header {        
+        @include mobile{
+            display: none;
+        }    
+    }
+    &--info{
+        @include text($ff, 500, 1.6rem, 2.1rem, $ligth-gray);
+        padding: 20px 40px;
+        border-radius: 6px;
+    }
+    @include mobile{
+        padding: 10px 20px;
+    }    
+}

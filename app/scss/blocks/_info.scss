@@ -1,0 +1,91 @@
+.info {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 61px;   
+    @include tablet {
+        flex-wrap: wrap-reverse;
+        text-align: center;
+        justify-content: center;
+    }
+    &__desc {
+        max-width: 546px;
+        @include tablet{
+            padding: 0 30px;
+        }
+    }
+    &__title {        
+        @include text($ff, 700, 5.8rem, 8.4rem, $test);        
+        letter-spacing: 0.02em;
+        background: $lg-title;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        text-shadow: 0px 4px 4px $shadow;
+        margin-bottom: 29px;
+        @include tablet{
+            font-size: 5rem;
+        }
+        @include tablet-small{
+            font-size: 4rem;
+            line-height: 5rem;
+            margin-bottom: 20px;
+        }
+        @include mobile{
+            font-size: 3rem;
+            line-height: 4rem;
+        }
+    }
+    &__text {
+        @include text($ff, 500, 1.5rem, 3rem, $gray);
+        opacity: 0.8;
+        text-shadow: 0px 4px 4px $shadow;
+        margin-bottom: 31px;
+        
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 29px;
+        @include tablet{
+           justify-content: center;
+        }
+        @include mobile{
+            flex-wrap: wrap;
+        }
+    }
+    &__video {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        @include text($ff, 500, 1.6rem, 2.1rem, $ligth-gray);
+        cursor: pointer;
+        & path{
+            transition: $transition;
+        }        
+        &:hover path{
+            fill: #f51515;
+        }
+    }   
+}
+.btn--info {
+    position: relative;       
+    transition: 0.5s;
+    overflow: hidden;
+}
+.btn--info:hover {    
+    box-shadow: 2px 2px 2px 1px $white;
+}
+.btn--info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    transition: 0.5s;
+}
+.btn--info:hover::before {
+    left: 100%;
+}
